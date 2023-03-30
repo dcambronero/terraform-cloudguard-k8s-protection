@@ -63,7 +63,7 @@ provider "helm" {
 }
 
 provider "inext" {
-  region = "eu"
+  region = "us"
   client_id  = var.appsec-client-id
   access_key = var.appsec-client-secret
 }
