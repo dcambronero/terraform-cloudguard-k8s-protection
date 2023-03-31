@@ -33,8 +33,8 @@ resource "helm_release" "asset-mgmt" {
 }
 
 resource "helm_release" "ckp-appsec" {
-  name       = "cg-appsec"
-  chart      = "https://github.com/CheckPointSW/Infinity-Next/blob/main/deployments/cp-k8s-appsec-nginx-ingress-4.0.1.tgz"
+  name       = "cloudguard-appsec"
+  chart      = "https://github.com/CheckPointSW/Infinity-Next/raw/main/deployments/cp-k8s-appsec-nginx-ingress-4.1.4.tgz"
   namespace  = "cloudguard-appsec"
   create_namespace = true
 
