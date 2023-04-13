@@ -27,7 +27,7 @@ resource "inext_web_app_asset" "aks-terraform-juiceshop" {
 
 resource "inext_log_trigger" "my-webapp-trigger" {
   name                             = "AKS Log Trigger"
-  access_control_allow_events      = false
+  access_control_allow_events      = true
   access_control_drop_events       = true
   threat_prevention_detect_events  = true
   threat_prevention_prevent_events = true
