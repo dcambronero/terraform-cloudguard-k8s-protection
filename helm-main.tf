@@ -34,7 +34,7 @@ resource "helm_release" "asset-mgmt" {
 
 resource "helm_release" "ckp-appsec" {
   name       = "cloudguard-appsec"
-  chart      = "https://github.com/CheckPointSW/Infinity-Next/raw/main/deployments/cp-k8s-appsec-nginx-ingress-4.1.4.tgz"
+  chart      = "https://github.com/CheckPointSW/Infinity-Next/raw/main/deployments/cp-k8s-appsec-nginx-ingress-4.0.1.tgz"
   namespace  = "cloudguard-appsec"
   create_namespace = true
 
@@ -55,7 +55,7 @@ resource "helm_release" "ckp-appsec" {
 
 data "kubernetes_service" "ckp-appsec-controller" {
   metadata {
-    name = "${helm_release.ckp-appsec.name}-cp-k8s-appsec-nginx-ingress-controller"
+    name = "${helm_release.ckp-appsec.name}-cpappsec-controller"
     namespace = helm_release.ckp-appsec.namespace
   }
   depends_on = [helm_release.ckp-appsec]
