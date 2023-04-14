@@ -7,7 +7,7 @@ resource "inext_kubernetes_profile" "appsec-k8s-profile" {
 resource "inext_web_app_asset" "aks-terraform-juiceshop" {
   name            = "app-aks-terraform-juiceshop"
   profiles        = [inext_kubernetes_profile.appsec-k8s-profile.id]
-  urls            = ["http://juiceshop-protected.${azurerm_dns_zone.mydns-public-zone.name}"]
+  urls            = ["https://juiceshop-protected.${azurerm_dns_zone.mydns-public-zone.name}"]
 
   practice {
     main_mode = "Learn" # enum of ["Prevent", "Inactive", "Disabled", "Learn"]
